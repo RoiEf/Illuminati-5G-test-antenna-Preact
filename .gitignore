@@ -1,0 +1,9 @@
+.vscode
+/build/*.js
+/build_dev/*.js
+/build_dev/*.js.map
+node_modules
+
+package-lock.json
+
+build_backup

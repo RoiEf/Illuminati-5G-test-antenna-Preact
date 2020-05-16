@@ -1,0 +1,34 @@
+{
+  "name": "illuminati_5g_test_antenna_preact",
+  "version": "1.0.0",
+  "license": "ISC",
+  "description": "Preact built page Illuminati data",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RoiEf/Illuminati-5G-test-antenna-Preact.git"
+  },
+  "keywords": [
+    "preact",
+    "microbundle",
+    "example",
+    "SPA",
+    "PWA",
+    "Illuminati",
+    "5G Networks",
+    "Joke"
+  ],
+  "source": "src/index.js",
+  "scripts": {
+    "build": "microbundle -f modern --no-sourcemap --external none -o build/bundle.js",
+    "dev": "npm run -s build_dev & npm run -s serve",
+    "build_dev": "microbundle -f modern --external none -o build_dev/bundle.js --watch",
+    "serve": "sirv build_dev -Dc"
+  },
+  "dependencies": {
+    "preact": "^10.4.1"
+  },
+  "devDependencies": {
+    "microbundle": "^0.12.0",
+    "sirv-cli": "^0.4.5"
+  }
+}
