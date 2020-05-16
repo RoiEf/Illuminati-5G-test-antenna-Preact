@@ -1,21 +1,21 @@
 import { h, render } from "preact";
-// import { useState } from "preact/hooks";
-import { Router } from "preact-router";
-
-import Home from "./routes/home";
+import { useState, useEffect } from "preact/hooks";
 
 const App = () => {
-  // const [user, setUser] = useState(null);
-  // const [password, setPassword] = useState(null);
-  // const [isAutenticated, setIsAutenticated] = useState(false);
+  const [textArr, setTextArr] = useState([">"]);
+  const mesagges = [];
 
-  // const updateAuthData = (obj) => {
-  //   setUser(obj.user);
-  //   setPassword(obj.password);
-  //   setIsAutenticated(true);
-  // };
+  useEffect(() => {}, [mesagges]);
 
-  return <div id="app">Some Text</div>;
+  return (
+    <div id="app">
+      <div id="box">
+        {textArr.map((val) => (
+          <p>{val}</p>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 render(<App />, window.preact_root);
