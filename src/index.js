@@ -4,43 +4,54 @@ import { useState, useEffect } from "preact/hooks";
 const App = () => {
   const [textArr, setTextArr] = useState([">"]);
   const mesagges = [
-    "> line 1",
-    "> line 2",
-    "> line 3",
-    "> line 4",
-    "> line 5",
-    "> line 6",
-    "> line 7",
-    "> line 8",
-    "> line 9",
-    "> line 10",
-    "> line 11",
-    "> line 12",
+    "> Cycle START",
+    "> Searching...",
+    "> Found 3 people",
+    "> MAC ADDRESS 10BXFF33H5",
+    "> Saveing data.",
+    "> Updating Dada Base",
+    "> Send Preamble 2400.5",
+    "> Found MAC ADDRESS AA.49.CF.80.11x",
+    "> Prepair Transmit",
+    "> Transmitting Test Signal",
+    "> Found 1 Device",
+    "> Set Packat size = Jambo",
     "> line 13",
     "> line 14",
     "> line 15",
   ];
   let tempArr = [];
   let index = 0;
+  let a = 0;
+  let i = 1;
   useEffect(() => {
     const interval = setInterval(() => {
       tempArr = [];
-      for (let a = index; a < index + 7; a++) {
+      for (a; a < i; a++) {
         tempArr.push(mesagges[a]);
       }
       tempArr.push(">_");
-      if (index < 5) {
-        index++;
-      } else {
-        index = 0;
-      }
       setTextArr(tempArr);
+      i++;
+      index++;
+      if (index < 7) {
+        a = 0;
+      } else if (index >= 7) {
+        a = index - 7;
+        i = index;
+      }
+      if (index > mesagges.length) {
+        index = 0;
+        i = 1;
+        a = 0;
+      }
     }, 2500);
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div id="app">
+      <h1>5G System Logger</h1>
       <div id="box">
         {textArr.map((val) => (
           <p>{val}</p>
