@@ -16,10 +16,15 @@ body {
   height: 100%;
 }
 
+#app h1 {
+  position: absolute;
+  left: 15%;
+}
+
 #box {
   position: absolute;
   top: 25%;
-  left: 25%;
+  left: 15%;
   margin-top: -50px;
   margin-left: -100px;
   min-width: 500px;
